@@ -12,8 +12,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/DietrichGebert/ponytail?style=flat-square&color=111111&label=stars" alt="Stars">
-  <img src="https://img.shields.io/github/v/release/DietrichGebert/ponytail?style=flat-square&color=111111&label=release" alt="Release">
+  <img src="https://img.shields.io/github/stars/pascalporedda/ponytail?style=flat-square&color=111111&label=stars" alt="Stars">
+  <img src="https://img.shields.io/github/v/release/pascalporedda/ponytail?style=flat-square&color=111111&label=release" alt="Release">
   <img src="https://img.shields.io/badge/works%20with-13%20agents-111111?style=flat-square" alt="Works with 13 agents">
   <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
 </p>
@@ -73,17 +73,20 @@ The most effort ponytail will ever ask of you:
 
 The Claude Code and Codex plugins run two tiny Node.js lifecycle hooks, so `node` needs to be on your PATH (note for Nix/nvm users: it must be on the non-interactive shell's PATH). If it isn't, the skills still work, the always-on activation just stays quiet instead of erroring on every prompt.
 
+This fork is installed from a pinned release tag, not a moving branch. The
+current trusted ref is `v4.6.0-snipki.1`.
+
 ### Claude Code
 
 ```
-/plugin marketplace add DietrichGebert/ponytail
+/plugin marketplace add pascalporedda/ponytail
 /plugin install ponytail@ponytail
 ```
 
 ### Codex
 
 ```bash
-codex plugin marketplace add DietrichGebert/ponytail
+codex plugin marketplace add pascalporedda/ponytail
 codex
 ```
 
@@ -95,14 +98,14 @@ This same install also covers the Codex desktop app: restart the app after insta
 ### GitHub Copilot CLI
 
 ```bash
-copilot plugin marketplace add DietrichGebert/ponytail
+copilot plugin marketplace add pascalporedda/ponytail
 copilot plugin install ponytail@ponytail
 ```
 
 In an interactive Copilot CLI session, use the slash equivalents:
 
 ```
-/plugin marketplace add DietrichGebert/ponytail
+/plugin marketplace add pascalporedda/ponytail
 /plugin install ponytail@ponytail
 ```
 
@@ -116,7 +119,7 @@ Copilot CLI namespaces plugin commands by plugin name. For example:
 ### Pi agent harness
 
 ```
-pi install git:github.com/DietrichGebert/ponytail
+pi install git:github.com/pascalporedda/ponytail#v4.6.0-snipki.1
 ```
 
 ### OpenCode
@@ -134,7 +137,7 @@ The `./` path resolves against your project's `opencode.json`; to share one chec
 ### Gemini CLI
 
 ```bash
-gemini extensions install https://github.com/DietrichGebert/ponytail
+gemini extensions install https://github.com/pascalporedda/ponytail#v4.6.0-snipki.1
 ```
 
 Loads the ruleset as always-on context every session and registers the `/ponytail` commands; the `skills/` ship too, activated when a task needs them.
@@ -144,7 +147,7 @@ Loads the ruleset as always-on context every session and registers the `/ponytai
 Google is renaming Gemini CLI to Antigravity CLI (the `agy` binary); the same extension installs there:
 
 ```bash
-agy plugin install https://github.com/DietrichGebert/ponytail
+agy plugin install https://github.com/pascalporedda/ponytail#v4.6.0-snipki.1
 ```
 
 It reuses this repo's `gemini-extension.json`. One difference: Antigravity converts the `/ponytail` commands into skills, so you type them into the chat (e.g. `/ponytail-review` as a message) instead of picking them from a slash menu. Until the migration completes (around June 18, 2026), `gemini extensions install` still works too. To run it as an always-on rule instead, drop the ruleset into `.agents/rules/`.
